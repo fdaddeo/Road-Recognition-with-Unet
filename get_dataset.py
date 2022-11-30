@@ -11,7 +11,7 @@ from multiprocessing import cpu_count
 from time import sleep
 from tqdm import tqdm
 
-KEY = 'Al_vzeuaccapdqwsEkm7JarSA59AanpIGS2TSkuTRYWpoIBrhRwNl73n-TIubRzf' # bing maps api key
+KEY = '' # bing maps api key
 
 RGB = 'rgb/'
 MASK = 'mask/'
