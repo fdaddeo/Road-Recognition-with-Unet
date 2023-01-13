@@ -2,48 +2,43 @@
 
 ## Impostazioni
 
-Il progetto è strutturato in modo che siano presenti:
+This project needs some folders:
 
-1. Directory "Train/" a sua volta suddivisa in:
-    - "txt_data/" in cui vengono salvati i file di testo contententi le coordinate delle immagini RGB
-    - "json_data/" contentente i file json con le informazioni sulle tracce
-    - "mask/" contenente le maschere binarie di groundthrouth
-    - "rgb/" contenente le immagini aeree RGB
+1. Directory "Train/" divided into:
+    - "txt_data/" in which store the coordinates of the RGB images;
+    - "json_data/" in which store road informations;
+    - "mask/" in which store the groundthrouth binary mask;
+    - "rgb/" in which store the RGB images.
 
-2. Directory "Test/" a sua volta suddivisa in:
-    - "txt_data/" in cui vengono salvati i file di testo contententi le coordinate delle immagini RGB
-    - "json_data/" contentente i file json con le informazioni sulle tracce
-    - "mask/" contenente le maschere binarie di groundthrouth
-    - "rgb/" contenente le immagini aeree RGB
+2. Directory "Test/" divided as before;
 
-3. Directory "Model/" in cui verranno salvati i modelli addestrati
+3. Directory "Model/" where store the generated models;
 
-4. Directory "Prediction/" in cui verranno salvate le predizioni in fase di testing
+4. Directory "Prediction/" where save the testing predictions;
 
-## Download del dataset
+## Dataset Download
 
-Il download del dataset parte dalla creazione di due file di testo, uno per il train set e uno per il test set, in cui specificare le coordinate mondo
-di un rettangolo immmaginario da cui estrarre le immagini rgb.
+To obtain the dataset, it's required to create a txt file for the training set and one for the test set. Both have to contain the coordinates of a "rectangle" from which extract the aerial RGB images.
 
-Successivamente eseguire il comando:
+The executes:
 
 ```
-python3 -m get_dataset --config <path/train_test/file.txt> --data <dir/salvataggio/train_test_set> --num <num_img_rettangolo>
+python3 -m get_dataset --config <path/to/train_test/file.txt> --data <path/to/train_test_set> --num <tot_num_images>
 ```
 
 
-## Addestramento
+## Training
 
-Per addestrare la rete è sufficiente eseguire il comando:
+To train the network, just execute:
 
 ```
-python3 -m train --data <dir/training_set> --model <dir/salvataggio/modello>
+python3 -m train --data <path/to/training_set> --model <path/to/model/folder>
 ```
 
 ## Testing
 
-Per eseguire il testing della rete eseguire:
+To test the network, just execute:
 
 ```
-python3 -m test --data <dir/testing_set> --pred <dir/salvataggio/predizioni> --model<dir/contenente/modello>
+python3 -m test --data <path/to/testing_set> --pred <path/to/prediction/folder> --model<path/to/model>
 ```
