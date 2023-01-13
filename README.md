@@ -1,6 +1,6 @@
 # Road Recognition with U-Net
 
-## Impostazioni
+## Setting Up
 
 This project needs some folders:
 
